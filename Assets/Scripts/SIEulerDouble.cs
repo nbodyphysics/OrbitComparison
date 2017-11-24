@@ -17,8 +17,8 @@ public class SIEulerDouble : MonoBehaviour
     // Use this for initialization
     void Start() {
         InitialConditions ic = InitialConditions.Instance();
-        v = new double[] { 0, -ic.v, 0 };
-        r = new double[] { -ic.r, 0, 0 };
+        v = new double[] { ic.v, 0 ,0 };
+        r = new double[] { 0, -ic.r, 0 };
         a = new double[3];
 
         mass = centralBody.mass;
