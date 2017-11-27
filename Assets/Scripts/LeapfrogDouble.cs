@@ -24,7 +24,7 @@ public class LeapfrogDouble : MonoBehaviour
         CalcAcceleration();
         mass = centralBody.mass;
 
-        speed = ic.speed;
+        speed = ic.GetSpeed();
         dt = ic.dt;
 
         Debug.LogFormat("dt={0}", dt);

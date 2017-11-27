@@ -8,7 +8,7 @@ public class InitialConditions : MonoBehaviour {
     public float r;
     public float v;
     public float dt;
-    public float speed;
+    private float speed;
 
     public Text timestep;
 
@@ -24,8 +24,13 @@ public class InitialConditions : MonoBehaviour {
         return instance;
     }
 
-    private void Start() {
+    private void Awake() {
         timestep.text = string.Format("Timestep = {0}", dt);
+        speed = Time.fixedDeltaTime / dt;
+    }
+
+    public float GetSpeed() {
+        return speed;
     }
 
 

@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 286733079}
   - component: {fileID: 286733078}
   m_Layer: 0
-  m_Name: EulerSingle
+  m_Name: Euler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 286733077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdf32cb8b904ba54c8247806f1c6dc47, type: 3}
+  m_Script: {fileID: 11500000, guid: 6da9aaf1b1ce61647af279c86d097c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   centralBody: {fileID: 1426041890}
@@ -406,7 +406,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Orbit Comparison - Single Precision
+  m_Text: Orbit Comparison - Double Precision
 --- !u!222 &556340545
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1241,8 +1241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r: 10
   v: 5
-  dt: 0.02
-  speed: 1
+  dt: 0.002
+  speed: 12
   timestep: {fileID: 1103452927}
 --- !u!4 &1426041889
 Transform:
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1570929175}
   - component: {fileID: 1570929174}
   m_Layer: 0
-  m_Name: Leapfrog Single
+  m_Name: Leapfrog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1570929173}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 995692add51eb1e43ac9d80460fc18f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d3ba70af029a274ab2f78884ba06b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   centralBody: {fileID: 1426041890}
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2051264956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b5df81a21cefd4199493d7f337f6f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 01287ae28ad10e744a4cdf1841317c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   centralBody: {fileID: 1426041890}

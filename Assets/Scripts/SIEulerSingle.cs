@@ -6,6 +6,8 @@ public class SIEulerSingle : MonoBehaviour
 
     public Rigidbody centralBody;
 
+    public EnergyGraph energyGraph; 
+
     private float speed = 1f;
 
     private float[] v;
@@ -23,7 +25,7 @@ public class SIEulerSingle : MonoBehaviour
 
         mass = centralBody.mass;
         dt = ic.dt;
-        speed = ic.speed;
+        speed = ic.GetSpeed();
     }
 
     private void CalcAcceleration() {
@@ -35,6 +37,11 @@ public class SIEulerSingle : MonoBehaviour
         a[1] = -r[1] * mass / (r3);
         a[2] = -r[2] * mass / (r3);
 
+    }
+
+    private float Energy() {
+        float d = Mathf.Sqrt(r[0] * r[0] + r[1] * r[1] + r[2] * r[2]);
+        return 0.5f * (v[0] * v[0] + v[1] * v[1] + v[2]*v[2]) - mass / d;
     }
 
     // Update is called once per frame
@@ -54,5 +61,8 @@ public class SIEulerSingle : MonoBehaviour
 
          }
         transform.position = new Vector3(r[0], r[1], r[2]);
+
+        if (energyGraph != null)
+            energyGraph.energy = Energy();
     }
 }

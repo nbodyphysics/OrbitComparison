@@ -5,6 +5,7 @@ public class LeapfrogSingle: MonoBehaviour
 {
 
     public Rigidbody centralBody;
+    public EnergyGraph energyGraph;
     private float speed = 1f; 
 
     private float[] a;
@@ -24,10 +25,15 @@ public class LeapfrogSingle: MonoBehaviour
         CalcAcceleration();
         mass = centralBody.mass;
 
-        speed = ic.speed;
+        speed = ic.GetSpeed();
         dt = ic.dt;
 
 
+    }
+
+    private float Energy() {
+        float d = Mathf.Sqrt(r[0] * r[0] + r[1] * r[1] + r[2] * r[2]);
+        return 0.5f * (v[0] * v[0] + v[1] * v[1] + v[2] * v[2]) - mass / d;
     }
 
     private void CalcAcceleration() {
@@ -59,6 +65,7 @@ public class LeapfrogSingle: MonoBehaviour
             v[2] += a[2] * 0.5f * dt;
         }
         transform.position = new Vector3( r[0],  r[1], r[2]);
-
-     }
+        if (energyGraph != null)
+            energyGraph.energy = Energy();
+    }
 }

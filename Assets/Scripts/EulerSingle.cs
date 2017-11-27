@@ -23,7 +23,7 @@ public class EulerSingle : MonoBehaviour
 
         mass = centralBody.mass;
         dt = ic.dt;
-        speed = ic.speed;
+        speed = ic.GetSpeed();
     }
 
     private void CalcAcceleration() {

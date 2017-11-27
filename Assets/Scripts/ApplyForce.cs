@@ -5,7 +5,7 @@ using UnityEngine;
 public class ApplyForce : MonoBehaviour {
 
     public Rigidbody centralBody;
-    public Vector3 initialVelocity; 
+    public EnergyGraph energyGraph;
 
 
     private Rigidbody rbody; 
@@ -13,13 +13,22 @@ public class ApplyForce : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rbody = GetComponent<Rigidbody>();
-        rbody.velocity = initialVelocity;
+        InitialConditions ic = InitialConditions.Instance();
+
+        rbody.velocity = new Vector3(0, -ic.v, 0);
+        transform.position = new Vector3(ic.r, 0, 0);
 
         Debug.LogFormat("Timestep={0}", Time.fixedDeltaTime);
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private float Energy() {
+        float r = Vector3.Magnitude(centralBody.transform.position - transform.position);
+        Vector3 v = rbody.velocity;
+        return 0.5f * Vector3.SqrMagnitude(v) - centralBody.mass / r;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         Vector3 r =  centralBody.transform.position - transform.position;
         Vector3 forceDirection = Vector3.Normalize(r);
         float rMag = Vector3.Magnitude(r);
@@ -27,5 +36,8 @@ public class ApplyForce : MonoBehaviour {
         // Take G=1
         float forceMagnitude = rbody.mass * centralBody.mass / (rMag * rMag);
         rbody.AddForce(forceMagnitude * forceDirection);
-	}
+
+        if (energyGraph != null)
+            energyGraph.energy = Energy();
+    }
 }
