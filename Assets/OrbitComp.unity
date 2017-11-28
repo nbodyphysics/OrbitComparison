@@ -864,7 +864,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   r: 10
   v: 5
-  dt: 0.005
+  dt: 0.02
   timestep: {fileID: 1103452927}
 --- !u!4 &564998865
 Transform:
@@ -1571,7 +1571,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0589c36f68ee79948b3964b3b0a1ca47, type: 2}
+  - {fileID: 2100000, guid: 6320078bcfc098d4a9919d6fd2175772, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1835,7 +1835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09019608, g: 0, b: 0.9098039, a: 1}
+  m_Color: {r: 0.101960786, g: 0.49019608, b: 0.84313726, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2311,7 +2311,7 @@ TrailRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0589c36f68ee79948b3964b3b0a1ca47, type: 2}
+  - {fileID: 2100000, guid: 6320078bcfc098d4a9919d6fd2175772, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
